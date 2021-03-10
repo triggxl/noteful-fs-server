@@ -1,0 +1,4 @@
+ALTER TABLE notes
+  DROP COLUMN id;
+
+  DROP TABLE IF EXISTS notes;

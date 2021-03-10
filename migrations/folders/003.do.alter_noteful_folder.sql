@@ -1,0 +1,1 @@
+-- used if we want to add a column in future releases or updates
