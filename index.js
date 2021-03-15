@@ -1,4 +1,4 @@
-const db = require('./db')
+const db = require('./src/db')
 const express = require('express')
 const noteRouter = require('./src/notes/notes-router')
 const folderRouter = require('./src/folders/folders-router')
