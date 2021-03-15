@@ -1,3 +1,5 @@
+const knex = require('../db');
+
 const NotesService = {
   getAllNotes(knex) {
     return knex.select('*').from('notes')

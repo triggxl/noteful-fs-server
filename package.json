@@ -15,8 +15,9 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "faker": "^4.1.0",
+    "express": "^4.17.1",
     "json-server": "^0.16.3",
-    "postgrator-cli": "^3.2.0"
+    "postgrator-cli": "^3.2.0",
+    "xss": "^1.0.8"
   }
 }

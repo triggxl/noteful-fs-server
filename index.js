@@ -1,16 +1,24 @@
-const jsonServer = require('json-server')
 const db = require('./db')
+const express = require('express')
+const noteRouter = require('./src/notes/notes-router')
+const folderRouter = require('./src/folders/folders-router')
 
-const server = jsonServer.create()
-const router = jsonServer.router(db())
-const middlewares = jsonServer.defaults()
+//require express
+const app = express(db);
+// server.use(middlewares)
+// server.use(router)
 
-server.use(middlewares)
-server.use(router)
+// use
+app.use(noteRouter)
+app.use(folderRouter)
+
+app.get('/', (req, res) => {
+  res.send('Hello Express!');
+});
 
 const PORT = process.env.NODE_ENV === 'production' ? process.env.PORT : '9090';
 
-server.listen(PORT, () => {
+app.listen(PORT, () => {
   console.log(`Noteful json server started at PORT: ${PORT}`)
 })
 
@@ -23,6 +31,8 @@ process.env.PORT || 9090
 Deploying to heroku
 1.) Start on local server (fixed port)
 2.) Use env.PORT to connect to Heroku
+3.) commit to GitHub
+4.) git push heroku
  */
 
 // 3/10
