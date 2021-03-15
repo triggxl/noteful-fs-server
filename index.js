@@ -8,11 +8,22 @@ const middlewares = jsonServer.defaults()
 server.use(middlewares)
 server.use(router)
 
-const PORT = process.env.NODE_ENV === 'production' ? process.env.PORT : 'http://localhost:9090';
+const PORT = process.env.NODE_ENV === 'production' ? process.env.PORT : '9090';
 
 server.listen(PORT, () => {
   console.log(`Noteful json server started at PORT: ${PORT}`)
 })
+
+
+/*
+env variable = data that lives outside your application
+Need port from heroku
+process.env.PORT || 9090
+
+Deploying to heroku
+1.) Start on local server (fixed port)
+2.) Use env.PORT to connect to Heroku
+ */
 
 // 3/10
 // make fresh repo git clone it to new repo
