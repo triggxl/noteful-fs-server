@@ -2,9 +2,17 @@ const db = require('./src/db')
 const express = require('express')
 const noteRouter = require('./src/notes/notes-router')
 const folderRouter = require('./src/folders/folders-router')
+const cors = require('cors');
 
 //require express
 const app = express(db);
+
+let corsConfig = {
+  options: PORT === 'dev' ? 9090 : 'https://noteful-react-app-6fb0knbsp-triggxl.vercel.app/',
+}
+// allow requests from 9090 in dev else vercel when live
+// express cors middleware
+app.use(cors(corsConfig))
 // server.use(middlewares)
 // server.use(router)
 
